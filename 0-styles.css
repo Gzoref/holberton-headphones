@@ -152,17 +152,20 @@ template {
 /* Variables 
 	==================== */
 :root {
-  --font-size-small: 1rem;
   --font-size-medium: 1rem;
-  --font-size-xl: 32px;
-  --color-primary: #ff6565;
+  --font-size-large: 2rem;
+  --holberton-red: #ff6565;
   --text-color-white: #ffffff;
-  --font-family-body: "Source Sans Pro", "Lato", sans-serif;
 }
 
+/* body
+	==================== */
+
 body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  padding: 0;
+  font-family: Source Sans Pro, sans-serif;
 }
 
 .container {
@@ -173,104 +176,94 @@ body {
   position: relative;
 }
 
-/* Header 
-==================== */
+/* Header
+	==================== */
 
 header {
-	width: 100%;
-	background: transparent;
-	position: relative;
-	color: white;
-	background-image: url("./images/headphones_hero_1.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
+  background-image: url("./images/headphones_hero_1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  color: white;
 }
 
-header .container {
-	justify-content: space-between;
-	align-content: space-between;
-	padding: 2rem;
-	flex-wrap: wrap;
+.container {
+  justify-content: space-between;
+  align-content: space-between;
+  padding: 2rem;
+  flex-wrap: wrap;
 }
 
-header .container nav {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-content: space-between;
-	position: relative;
-}
-
-#menu-toggle {
-	display: none;
-	position: absolute;
-}
-
-#menu-btn {
-	display: none;
-	position: absolute;
+.container nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  position: relative;
 }
 
 .header-logo {
-	width: 15rem;
-	height: auto;
+  width: 15rem;
 }
 
+/* Nav Bar
+	==================== */
+
 .header-nav {
-	display: flex;
-	margin: auto 0;
-	padding: 0;
-	list-style-type: none;
-	font-size: var(--font-size-small);
-	text-transform: lowercase;
-	font-weight: 700;
-	font-family: var(--font-family-body);
+  display: flex;
+  list-style-type: none;
+  font-weight: 400;
 }
 
 .header-nav .list-item {
-	margin: auto 1.25rem;
+  margin: 0 1rem;
 }
 
 .header-nav .nav-link {
-	text-decoration: none;
-	color: var(--text-color-white);
+  text-decoration: none;
+  color: var(--text-color-white);
 }
 
-.nav-link:hover{
-	color: var(--color-primary);
+.nav-link:hover {
+  color: var(--holberton-red);
 }
+
+/* Hero
+==================== */
 
 .hero-content {
-	width: 75%;
-	text-align: center;
-	font-family: var(--font-family-body);
-	margin: 20rem auto 0 auto;
+  width: 75%;
+  text-align: center;
+  margin: 20rem auto 0 auto;
 }
 
 .hero-title {
-	font-size: var(--font-size-xl);
-	position: relative;
-	font-weight: 700;
-}
-
-.hero-title::after {
-	content: "Lorem ipsum dolor set amet lorem ipsum set";
-	display: block;
-	font-size: var(--font-size-medium);
-	position: relative;
-	margin: 0.25rem 0;
+  font-size: var(--font-size-large);
+  position: relative;
+  font-weight: 700;
 }
 
 .call-to-action {
-	border: 1px solid var(--color-primary);
-	background-color: var(--color-primary);
-	border-radius: 50px;
-	padding: 0.5rem 1.5rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 22px;
+  background-color: var(--holberton-red);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .call-to-action:hover {
   cursor: pointer;
   opacity: 0.9;
+  filter: drop-shadow(0px 2px 20px rgba(0, 0, 0, 0.5));
+}
+
+.hero-title::after {
+  content: "Lorem ipsum dolor set amet lorem ipsum set";
+  display: block;
+  font-size: 1rem;
+  line-height: 2;
 }
 
 .hero-content p {
@@ -279,10 +272,8 @@ header .container nav {
   font-size: var(--font-size-medium);
 }
 
-@media (max-width: 1200px) {
-  header {
-    background-position: 42% 50%;
-  }
+#toggle-menu {
+  display: none;
 }
 
 @media (max-width: 480px) {
@@ -292,42 +283,42 @@ header .container nav {
 
   header .container nav {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
   .header-logo {
     width: 50%;
-    height: auto;
   }
 
   .header-nav {
     display: none;
     width: 100%;
     flex-direction: column;
-    margin: 1rem auto;
     text-align: center;
+    margin: 1rem;
     font-weight: bold;
   }
 
   .header-nav .nav-link {
     width: 100%;
-	margin: 0.5rem auto;
-	line-height: 2;
+    margin: 0.5rem auto;
+    line-height: 2;
   }
 
-  #menu-btn {
+  #hamburger-btn {
     background: white;
     height: 2px;
-    width: 13px;
+    width: 0.8rem;
     position: absolute;
     left: 1rem;
     top: 18px;
     display: block;
   }
 
-  #menu-btn::before {
+  #hamburger-btn::before {
     content: "";
-    background: white;
+    background: #ffffff;
     height: 2px;
     width: 20px;
     position: relative;
@@ -336,9 +327,9 @@ header .container nav {
     transition: all 0.2s ease;
   }
 
-  #menu-btn::after {
+  #hamburger-btn::after {
     content: "";
-    background: white;
+    background: #ffffff;
     height: 2px;
     width: 18px;
     position: relative;
@@ -347,29 +338,27 @@ header .container nav {
     transition: all 0.2s ease;
   }
 
-  #menu-toggle:checked ~ .header-nav {
+  #toggle-menu:checked ~ .header-nav {
     display: block;
   }
 
-  #menu-toggle:checked ~ #menu-btn {
+  #toggle-menu:checked ~ #hamburger-btn {
     background: transparent;
   }
 
-  #menu-toggle:checked ~ #menu-btn::before {
+  #toggle-menu:checked ~ #hamburger-btn::before {
     transform: rotate(45deg);
-    top: 3px;
-    margin: auto;
+    top: 0.19rem;
   }
 
-  #menu-toggle:checked ~ #menu-btn::after {
-    width: 20px;
+  #toggle-menu:checked ~ #hamburger-btn::after {
+    width: 1.34rem;
     transform: rotate(-45deg);
     top: 1px;
-    margin: auto;
   }
 
   .hero-content {
-    margin: 16rem auto 0 auto;
+    margin: 16rem 0;
     width: 100%;
   }
 }
