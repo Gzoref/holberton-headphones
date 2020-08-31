@@ -412,7 +412,15 @@ h1.what-we-do-title {
   }
 
   .what-we-do-icons p {
-    line-height: 1.5;
-    width: 65%;
+ 	position: absolute;
+	height: 52px;
+	left: 0%;
+	right: 0%;
+	top: calc(50% - 52px/2 + 64px);
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 26px;
+	text-align: center;
   }
 }
