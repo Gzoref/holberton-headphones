@@ -363,10 +363,11 @@ header {
   }
 }
 
+
 /* What we do Section
 	==================== */
+
 section.what-we-do {
-  
   width: 100%;
 }
 
@@ -392,7 +393,8 @@ h1.what-we-do-title {
 
 .what-we-do-icons p {
   line-height: 1.5;
-  width: 65%;
+  width: 90%;
+  font-size: 14px;
 }
 
 .holberton_school-icon-ic_sound,
