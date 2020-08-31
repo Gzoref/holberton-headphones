@@ -373,18 +373,21 @@ section.what-we-do {
 h1.what-we-do-title {
   justify-content: center;
   text-align: center;
+  font-size: 32px;
+  margin: 4rem;
 }
 
 .what-we-do > p {
   text-align: center;
-  margin: 0 8rem 0 8rem;
+  margin: 0 10rem 0 10rem;
+  line-height: 2;
 }
 
 .what-we-do-icons {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 100%;
-  margin: 2rem 0rem 0 7rem;
+  margin: 4rem 0rem 0 7rem;
 }
 
 .what-we-do-icons p {
