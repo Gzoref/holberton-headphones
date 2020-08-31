@@ -384,7 +384,7 @@ h1.what-we-do-title {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 100%;
-  margin: 2rem 3rem 0 2rem;
+  margin: 2rem 0rem 0 7rem;
 }
 
 .what-we-do-icons p {
